@@ -2,6 +2,11 @@ import React from "react";
 import MenuItem from "../menu-item/menu-item.component";
 import "./directory.styles.scss";
 
+//Name:     Directory
+//Type:     Class Component
+//Input:    None
+//Output:   <MenuItem> wrapped in a <Div>
+//Purpose:  Initialize the sections array. Render and return the array objects to MenuItem
 class Directory extends React.Component {
   constructor() {
     super();
