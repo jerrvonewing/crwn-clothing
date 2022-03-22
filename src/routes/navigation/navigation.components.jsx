@@ -1,7 +1,8 @@
 import { Outlet, Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import "./navigation.styles.scss";
+import { UserContext } from "../../context/user.context";
 
 //Name:     Navigation
 //Type:     Functional Component
@@ -9,6 +10,8 @@ import "./navigation.styles.scss";
 //Output:   <Fragment> containing the Logo Link, the Shop Link, and the Outlet placement
 //Purpose:  Return the Navigation bar and the Outlet placement below
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
   return (
     <Fragment>
       <div className="navigation">

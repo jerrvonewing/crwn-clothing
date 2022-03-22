@@ -7,6 +7,12 @@ import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
 import Button from "../button/button.component";
 
+//Name:     SignUpForm
+//Type:     Functional Component
+//Input:    None
+//Output:   <Directory> wrapped in a <Div>
+//Purpose:  Pass along the Directory component and the categories array
+
 const defaultFormFields = {
   displayName: "",
   email: "",
