@@ -11,12 +11,7 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 //Output:   <Fragment> containing the Logo Link, the Shop Link, and the Outlet placement
 //Purpose:  Return the Navigation bar and the Outlet placement below
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  };
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -29,7 +24,7 @@ const Navigation = () => {
             SHOP
           </Link>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>
+            <span className="nav-link" onClick={signOutUser}>
               SIGN OUT
             </span>
           ) : (
