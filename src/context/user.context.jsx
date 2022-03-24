@@ -4,7 +4,11 @@ import {
   createUserDocumentFromAuth,
 } from "../utils/firebase/firebase.utils";
 
-//as the Actual value you want to access
+//Name:     UserContext
+//Type:     Functional Component
+//Input:    None
+//Output:   <UserContext.Provider value, and its children>
+//Purpose:  Pass along the Currently logged in user
 export const UserContext = createContext({
   currentUser: null,
   setCurrentUser: () => null,
