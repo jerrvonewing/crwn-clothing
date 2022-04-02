@@ -1,12 +1,12 @@
 import React from "react";
-import MenuItem from "../menu-item/menu-item.component";
+import DirectoryItem from "../directory-item/directory-item.component";
 import "./directory.styles.scss";
 
 //Name:     Directory
 //Type:     Class Component
 //Input:    None
-//Output:   <MenuItem> wrapped in a <Div>
-//Purpose:  Initialize the sections array. Render and return the array objects to MenuItem
+//Output:   <DirectoryItem> wrapped in a <Div>
+//Purpose:  Initialize the sections array. Render and return the array objects to DirectoryItem
 class Directory extends React.Component {
   constructor() {
     super();
@@ -52,7 +52,7 @@ class Directory extends React.Component {
     return (
       <div className="directory-menu">
         {this.state.sections.map(({ title, id, imageUrl }) => (
-          <MenuItem key={id} title={title} imageUrl={imageUrl} />
+          <DirectoryItem key={id} title={title} imageUrl={imageUrl} />
         ))}
       </div>
     );
