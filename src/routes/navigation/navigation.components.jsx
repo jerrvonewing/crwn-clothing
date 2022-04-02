@@ -7,7 +7,6 @@ import "./navigation.styles.scss";
 import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-
 //Name:     Navigation
 //Type:     Functional Component
 //Input:    None
