@@ -1,62 +1,55 @@
 import React from "react";
 import DirectoryItem from "../directory-item/directory-item.component";
-import "./directory.styles.scss";
+import { DirectoryContainer } from "./directory.styles";
 
 //Name:     Directory
 //Type:     Class Component
 //Input:    None
 //Output:   <DirectoryItem> wrapped in a <Div>
 //Purpose:  Initialize the sections array. Render and return the array objects to DirectoryItem
-class Directory extends React.Component {
-  constructor() {
-    super();
+const categories = [
+  {
+    title: "hats",
+    imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+    id: 1,
+    route: "shop/hats",
+  },
+  {
+    title: "jackets",
+    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+    id: 2,
+    route: "shop/jackets",
+  },
+  {
+    title: "sneakers",
+    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+    id: 3,
+    route: "shop/sneakers",
+  },
+  {
+    title: "womens",
+    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+    size: "large",
+    id: 4,
+    route: "shop/womens",
+  },
+  {
+    title: "mens",
+    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+    size: "large",
+    id: 5,
+    route: "shop/mens",
+  },
+];
 
-    this.state = {
-      sections: [
-        {
-          title: "hats",
-          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-          id: 1,
-          linkUrl: "shop/hats",
-        },
-        {
-          title: "jackets",
-          imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-          id: 2,
-          linkUrl: "shop/jackets",
-        },
-        {
-          title: "sneakers",
-          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-          id: 3,
-          linkUrl: "shop/sneakers",
-        },
-        {
-          title: "womens",
-          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-          size: "large",
-          id: 4,
-          linkUrl: "shop/womens",
-        },
-        {
-          title: "mens",
-          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-          size: "large",
-          id: 5,
-          linkUrl: "shop/mens",
-        },
-      ],
-    };
-  }
-  render() {
-    return (
-      <div className="directory-menu">
-        {this.state.sections.map(({ title, id, imageUrl }) => (
-          <DirectoryItem key={id} title={title} imageUrl={imageUrl} />
-        ))}
-      </div>
-    );
-  }
-}
+const Directory = () => {
+  return (
+    <DirectoryContainer>
+      {categories.map((category) => (
+        <DirectoryItem key={category.id} category={category} />
+      ))}
+    </DirectoryContainer>
+  );
+};
 
 export default Directory;
