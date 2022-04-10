@@ -1,7 +1,9 @@
 require("dotenv").config();
-const stripe = require("string")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
+//Recieve the request
 exports.handler = async (event) => {
+  //expects an amount
   try {
     const { amount } = JSON.parse(event.body);
 
