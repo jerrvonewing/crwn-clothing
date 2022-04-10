@@ -47,5 +47,9 @@
     .price {
       width: 10%;
     }
+
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+    }
   }
 }
